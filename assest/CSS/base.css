@@ -21,8 +21,9 @@ body {
     position: relative;
 }
 
+/* Grid */
 .grid {
-    width: 1200px;
+    width: 1330px;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -38,10 +39,26 @@ body {
     margin-right: -5px;
 }
 
-.grid__column {
-    padding-left: 5px;
-    padding-right: 5px;
-    width: calc((1 / 12) * 100%);
+.grid_columm-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 33.33333%;
+}
+
+.grid__columm-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 25%;
+}
+
+.grid__columm-5 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 20%;
+}
+
+.zoom-in {
+    transition: 5s ease-in;
 }
 
 /* Animation */
@@ -72,6 +89,15 @@ body {
     }
 }
 
+@keyframes scrollDown {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
 /* Modal */
 .modal {
     top: 0;
@@ -83,6 +109,7 @@ body {
     position: fixed;
     animation: fadeIn linear 0.7s;
     user-select: none;
+    z-index: 999;
 }
 
 .show {

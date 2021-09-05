@@ -3,13 +3,13 @@ const userBtns = document.querySelector('.js-user-btn');
 const modal = document.querySelector('.js-modal');
 const modalClose = document.querySelector('.js-modal-close');
 
-userBtns.onclick = () => {showLogin();};
-function showLogin() {
+userBtns.onclick = () => {showLoginRegis();};
+function showLoginRegis() {
     modal.classList.add('show')
 }
 
-modalClose.onclick = () => {closeShowLogin();}
-function closeShowLogin() {
+modalClose.onclick = () => {closeShowLoginRegis();}
+function closeShowLoginRegis() {
     modal.classList.remove('show')
 }
 
@@ -27,11 +27,13 @@ function showRegis() {
     regisForm.classList.add('show--form')
 }
 
-// loginBTN.onclick = () => {showLogin()}
-// function showLogin() {
-//     regisForm.classList.remove('show--form')
-//     loginForm.classList.remove('hidden--form')
-// }
+loginBTN.onclick = () => {showLogin()}
+function showLogin() {
+    regisForm.classList.remove('show--form')
+    regisForm.classList.add('hidden--form')
+    loginForm.classList.remove('hidden--form')
+    loginForm.classList.add('show--form')
+}
 
 
 
