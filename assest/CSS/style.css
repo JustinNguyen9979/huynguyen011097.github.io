@@ -403,6 +403,7 @@
     list-style: none;
     width: 100%;
     padding: 15px 0 0 40px;
+    position: relative;
 }
 
 .sub__bar__item--text {
@@ -528,7 +529,8 @@
 }
 
 .submenu__bar__list--text::after,
-.submenu__bar__list--title::after {
+.submenu__bar__list--title::after,
+.sub__child__bar__item--text::after {
     content: "";
     position: absolute;
     left: 0;
@@ -541,7 +543,8 @@
 }
 
 .sub__bar__list:hover .submenu__bar__list--text::after,
-.sub__bar__list:hover .submenu__bar__list--title::after {
+.sub__bar__list:hover .submenu__bar__list--title::after,
+.sub__child__bar__item:hover .sub__child__bar__item--text::after {
     width: 100%;
 }
 
@@ -549,11 +552,81 @@
     display: block;
 }
 
+/* Btn Search */
+.form__box {
+    display: flex;
+    height: 83px;
+    font-size: 1.4rem;
+}
 
+.form__search--input {
+    outline: none;
+    border: none;
+    width: 690px;
+    padding-left: 34px;
+}
 
+.form__search--input-btn {
+    width: 220px;
+    font-weight: 600;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    transition: 0.3s ease-in;
+}
 
+.form__search--input-btn:hover {
+    background-color: #23a9af;
+    cursor: pointer;
+}
 
+.sub__bar__item--icon {
+    float: right;
+    margin-right: 30px;
+    font-size: 1.4rem;
+}
 
+.sub__child__bar__list {
+    position: absolute;
+    width: 100%;
+    left: 252px;
+    top: -16px;
+    padding-left: 0;
+    padding: 20px 0;
+    background-color: var(--white-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: scrollDown linear 0.3s;
+    display: none;
+}
+
+.sub__child__bar__item {
+    list-style: none;
+    padding: 15px 0 0 40px;
+}
+
+.sub__child__bar__item--text {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.sub__child__bar__list::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 9px;
+    top: 0;
+    left: -7px;
+    /* background-color: black; */
+}
+
+.submenu__bar__list--item:hover .sub__child__bar__list {
+    display: block;
+}
 
 
 

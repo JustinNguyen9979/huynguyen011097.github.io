@@ -35,10 +35,20 @@ function showLogin() {
     loginForm.classList.add('show--form')
 }
 
+// Search BTN
+const searchBTN = document.querySelector('.js__search--btn');
+const modalSearch = document.querySelector('.js-modal-btn-search');
+const CloseModalSearch = document.querySelector('.js-modal-search-close')
 
+searchBTN.onclick = () => {showSearch()}
+function showSearch() {
+    modalSearch.classList.add('show')
+}
 
-
-
+CloseModalSearch.onclick = () => {closeSearch()}
+function closeSearch() {
+    modalSearch.classList.remove('show')
+}
 
 
 

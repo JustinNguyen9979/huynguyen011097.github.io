@@ -80,6 +80,15 @@ body {
     }
 }
 
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
 @keyframes fadeIn {
     from { 
         opacity: 0;
@@ -134,7 +143,18 @@ body {
     animation: growth linear 0.1s;
 }
 
-.modal__body {
+.modal__overlay__search {
+    --growth-form: 0.6;
+    --growth-to: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(81, 212, 216, 0.7);
+    animation: growth linear 0.1s;
+}
+
+.modal__body,
+.modal__body--search {
     margin: auto;
     z-index: 1;
 }
