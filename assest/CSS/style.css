@@ -379,9 +379,9 @@
 .submenu__bar {
     display: flex;
     position: absolute;
-    top: calc(100% - 30px);
-    width: 240px;
-    /* background-color: var(--white-color); */
+    top: calc(100% - 26px);
+    min-width: 248px;
+    background-color: var(--white-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transform-origin: top;
     animation: scrollDown linear 0.3s;
@@ -453,7 +453,7 @@
 .header__contai__cart {
     position: absolute;
     right: 0;
-    top: 21px;
+    top: 26px;
     width: 27rem;
     max-height: 220px;
     transform-origin: top;
@@ -479,23 +479,75 @@
     position: absolute;
     left: 0;
     top: 80px;
-    max-width: 1534px;
+    width: 100%;
     margin: 0;
-    border-style: 1px solid;
-    box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
     transform-origin: top;
+    border-style: 1px solid;
     animation: scrollDown linear 0.3s;
+    background-color: var(--white-color);
+    box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
+    display: none;
+}
+
+.header-menu_bar--list--sub {
+    position: static;
 }
 
 .submenu__bar__element--wrap {
     padding: 0 40px;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.2)
+    justify-content: space-between;
 }
 
+.sub__bar__list {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 40px;
+}
 
+.submenu__bar__element__list {
+    list-style: none;
+}
 
+.submenu__bar__list--text {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
 
+.submenu__bar__list--title {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    position: relative;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.submenu__bar__list--text::after,
+.submenu__bar__list--title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transform-origin: left;
+    transition: 0.3s ease-out;
+    background-color: var(--primary-color);
+}
+
+.sub__bar__list:hover .submenu__bar__list--text::after,
+.sub__bar__list:hover .submenu__bar__list--title::after {
+    width: 100%;
+}
+
+.header__container__menu__bar__list:hover .submenu__bar__element {
+    display: block;
+}
 
 
 
