@@ -50,5 +50,69 @@ function closeSearch() {
     modalSearch.classList.remove('show')
 }
 
+// Img Slideshow Btn
+var sliderIndex = 1;
+showDivs(sliderIndex)
+
+function plusDivs(n) {
+    showDivs(sliderIndex += n)
+}
+
+function showDivs(n) {
+    var i
+    var x = document.querySelectorAll(".slide")
+    if (n > x.length) {
+        sliderIndex = 1
+    }
+
+    if (n < 1) {
+        sliderIndex = x.length
+    }
+
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"
+    }
+
+    x[sliderIndex-1].style.display = "block"
+}
+
+// Img Slideshow Auto
+var myIndex = 0
+carousel()
+
+function carousel() {
+    var i
+    var x = document.querySelectorAll('.slide')
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"
+    }
+    myIndex++
+    if (myIndex > x.length) {
+        myIndex = 1
+    }
+    x[myIndex-1].style.display = "block"
+    setTimeout(carousel, 5000)
+}
+
+// Container Header Navbar Scroll & Btn Top
+var headerScroll = document.querySelector('.js-header')
+const topBtn = document.querySelector('.js-top-btn')
+
+window.onscroll = function() {
+    srcollHeader()
+}
+
+function srcollHeader() {
+    if (document.body.scrollTop > 46 || document.documentElement.scrollTop > 46) {
+        // topBtn.style.opacity = 1
+        headerScroll.style.top = "0"
+    }
+    else {
+        // topBtn.style.opacity = 0
+        headerScroll.style.top = "46px"
+    }
+}
+
+
 
 
